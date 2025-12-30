@@ -34,20 +34,10 @@ df_completo = df_completo.merge(df_customers, on='customer_id', how='inner')
 df_completo = df_completo.merge(df_products, on='product_id', how='inner')
 df_completo['valor_total'] = df_completo['price'] + df_completo['freight_value']
 
-# 9. Definir a data de referência
-data_referencia = df_completo['order_purchase_timestamp'].max() + pd.Timedelta(days=1)
+if not os.path.exists('data_processada'):
+    os.makedirs('data_processada')
 
-# 10. Agrupar por cliente e calcular Recência, Frequência, Monetário
-# Usamos 'nunique' para Frequency para contar pedidos únicos, não itens
-df_rfm = df_completo.groupby('customer_unique_id').agg({
-    'order_purchase_timestamp': lambda x: (data_referencia - x.max()).days,
-    'order_id': 'nunique',
-    'valor_total': 'sum'
-}).reset_index()
+# Salvando o CSV (index=False evita que o pandas crie uma coluna extra de números)
+df_completo.to_csv('data_processada/olist_master_data.csv', index=False)
 
-# 11. Renmeando colunas para RFM
-df_rfm.columns = ['customer_unique_id', 'Recency', 'Frequency', 'Monetary']
-
-print('============= Análise RFM =============')
-print(f"Número de clientes únicos processados: {df_rfm.shape[0]}")
-print(df_rfm.sort_values('Monetary', ascending=False).head())
+print("✨ Arquivo 'olist_master_data.csv' salvo com sucesso em /data_processada/")
