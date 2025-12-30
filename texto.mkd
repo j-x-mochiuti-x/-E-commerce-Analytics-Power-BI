@@ -1,0 +1,49 @@
+📝 O Projeto: "Customer Segmentation & Intelligence"
+O Problema de Negócio (Refinado): A Olist (Marketplace) quer otimizar suas campanhas de marketing. Disparar o mesmo e-mail para todo mundo é jogar dinheiro fora. Eles precisam saber:
+
+Quem são os VIPs (Champions)? (Compram sempre e gastam muito).
+
+Quem está em Risco de Churn? (Eram bons clientes, mas sumiram há meses).
+
+Quem são os "Peixinhos"? (Compram pouco, ticket baixo).
+
+A alta do dólar impactou a venda de eletrônicos na Olist?
+
+Sua Solução Técnica: Você vai criar uma Análise RFM (Recência, Frequência, Monetário) turbinada com K-Means Clustering (Machine Learning).
+
+🛠️ A Arquitetura do Projeto (Pipeline)
+Para esse portfólio, não faremos tudo no Power BI. Vamos simular um ambiente profissional real:
+
+O "Cérebro" (Python/Pandas/Scikit-Learn):
+
+Limpeza dos dados brutos (são várias tabelas: clientes, pedidos, pagamentos).
+
+Cálculo das métricas RFM para cada cliente.
+
+Aplicação do algoritmo K-Means para o computador "descobrir" os grupos sozinho.
+
+Exportação de um arquivo final: clientes_classificados.csv.
+
+A "Vitrine" (Power BI):
+
+Conecta no CSV tratado.
+
+Criação de visuais interativos.
+
+Storytelling: Um painel onde o gerente de marketing clica em "Risco de Churn" e vê a lista de clientes para ligar.
+
+🚀 Passo 1: Obter os Dados
+Você vai precisar baixar o dataset no Kaggle (é gratuito, só precisa logar): 🔗 Brazilian E-Commerce Public Dataset by Olist
+
+Baixe e descompacte. Você verá vários arquivos (customers, orders, order_items, payments, etc.).
+
+🧠 Passo 2: O Conceito de RFM (Para você estudar)
+Para resolver o problema de negócio que você definiu, usaremos três pilares:
+
+R (Recency/Recência): Quantos dias faz que o cliente comprou pela última vez? (Quanto menor, melhor).
+
+F (Frequency/Frequência): Quantas vezes ele comprou? (Quanto maior, melhor).
+
+M (Monetary/Monetário): Quanto dinheiro ele gastou no total? (Quanto maior, melhor).
+
+O Python vai calcular isso para cada um dos 100.000 clientes e o K-Means vai agrupar pessoas com comportamentos parecidos.
