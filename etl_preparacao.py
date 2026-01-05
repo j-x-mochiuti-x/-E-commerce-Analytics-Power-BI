@@ -1,22 +1,21 @@
 import pandas as pd
 import os
 
-# Caminho para os arquivos (ajuste se necessário)
 DATA_PATH = 'data/'
 
-# 1. Carregar Tabela de Pedidos (O Coração)
+# 1. Carregar Tabela de Pedidos 
 df_orders = pd.read_csv(os.path.join(DATA_PATH, 'olist_orders_dataset.csv'))
 
-# 2. Carregar Tabela de Itens (Onde tem o Preço)
+# 2. Carregar Tabela de Itens 
 df_items = pd.read_csv(os.path.join(DATA_PATH, 'olist_order_items_dataset.csv'))
 
-# 3. Carregar Tabela de Clientes (Quem comprou)
+# 3. Carregar Tabela de Clientes 
 df_customers = pd.read_csv(os.path.join(DATA_PATH, 'olist_customers_dataset.csv'))
 
-# 4. Carregar Tabela de Pagamentos (Como pagou)
+# 4. Carregar Tabela de Pagamentos 
 df_payments = pd.read_csv(os.path.join(DATA_PATH, 'olist_order_payments_dataset.csv'))
 
-# 5. Carregar Tabela de Produtos (O que é o produto)
+# 5. Carregar Tabela de Produtos
 df_products = pd.read_csv(os.path.join(DATA_PATH, 'olist_products_dataset.csv'))
 
 # 6. Converter datas para o formato datetime
@@ -36,8 +35,4 @@ df_completo['valor_total'] = df_completo['price'] + df_completo['freight_value']
 
 if not os.path.exists('data_processada'):
     os.makedirs('data_processada')
-
-# Salvando o CSV (index=False evita que o pandas crie uma coluna extra de números)
 df_completo.to_csv('data_processada/olist_master_data.csv', index=False)
-
-print("✨ Arquivo 'olist_master_data.csv' salvo com sucesso em /data_processada/")
