@@ -39,7 +39,7 @@ Os objetivos específicos incluem:
 Este projeto utilizou uma abordagem híbrida, combinando a robustez do Python para processamento pesado com a interatividade do Power BI.
 
 ### Linguagens e Ambientes
-* **Python 3.x:** Linguagem principal para ETL e modelagem preditiva.
+* **Python 3:** Linguagem principal para ETL e modelagem preditiva.
 * **DAX (Data Analysis Expressions):** Criação de medidas de negócio no Power BI.
 * **VSCode:** IDE para desenvolvimento dos scripts Python.
 * **Power BI Desktop:** Ferramenta de Dashboard e Relatórios.
@@ -51,6 +51,7 @@ Este projeto utilizou uma abordagem híbrida, combinando a robustez do Python pa
     * `StandardScaler`: Padronização de dados.
     * `KMeans`: Algoritmo de clusterização não-supervisionado.
 * **OS:** Automação de diretórios e arquivos.
+* **Plotly:** Para gerar imagem 3D interativa.
 
 ---
 
