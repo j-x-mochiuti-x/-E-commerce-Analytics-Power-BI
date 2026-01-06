@@ -87,6 +87,18 @@ A combinação de Engenharia de Dados com Visualização revelou:
 2.  **O Desafio da Recorrência (Insights do K-Means):** A segmentação via Python revelou que a grande maioria da base é composta por "compradores únicos"(*One-timers*). O cluster de VIPs, embora pequeno em volume de usuários, representa uma fatia desproporcional do faturamento, sugerindo que estratégias de CRM focadas em retenção (para o Cluster "Recorrente") e aumento de ticket (para o Cluster "Novos") são mais vitais do que apenas aquisição desenfreada.
 ![alt text](image-1.png)
 
+Para validar a eficácia do algoritmo K-Means, apliquei a Análise de Componentes Principais (PCA) para reduzir a dimensionalidade dos dados RFM. A visualização 3D confirmou a alta densidade do cluster de '"compradores únicos"(*One-timers*) e a clara distinção matemática dos 'VIPs', que se posicionam em coordenadas isoladas de alto valor e frequência, validando nossa estratégia de foco em retenção.
+Os valores negativos e o zero no gráfico PCA 3D não indicam recência negativa, mas sim a posição do cliente em relação à média da base. Clientes em valores negativos no eixo de recência são aqueles que compraram mais recentemente do que a média dos demais clientes, sendo, portanto, mais valiosos para a retenção.
+
+![alt text](image-6.png)
+
+| Cluster (Número) | Cor no Gráfico      | Persona Correspondente | Comportamento no Espaço 3D |
+|-----------------|---------------------|------------------------|----------------------------|
+| Cluster 3       | Amarelo Brilhante   | VIPs / Big Fish        | Estão no topo do eixo **Impacto Financeiro/Frequência**. São os pontos mais altos e isolados. |
+| Cluster 2       | Laranja / Rosa      | Recorrentes            | Estão no meio do gráfico, com impacto financeiro moderado e recência baixa (mais próximos do zero no eixo de Recência). |
+| Cluster 1       | Roxo                | Novos / Comuns         | Formam a base densa do gráfico. Têm baixo impacto financeiro individual, mas representam o maior volume de pontos. |
+| Cluster 0       | Azul Escuro         | Churn / Inativos       | Pontos que se deslocam para a extremidade do eixo de Recência (valores mais altos), indicando muito tempo sem compra. |
+
 
 3. **Foco do Portfólio:** A matriz de categorias demonstrou o Princípio de Pareto (80/20). Categorias de nicho como "PCs" e bem próximos  também "Eletroportateis" e "Instrumentos Musicais" sustentam o faturamento, enquanto uma cauda longa de categorias gera volume operacional mas pouca margem agregada.
 ![alt text](image-2.png)
