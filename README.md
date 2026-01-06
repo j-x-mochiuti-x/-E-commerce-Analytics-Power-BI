@@ -6,17 +6,18 @@ A solução aborda quatro pilares estratégicos do varejo digital: eficiência l
 
 ---
 
-👨‍💻 Desenvolvido por:
-## João Otávio Mochiuti
+## 👨‍💻 Desenvolvido por:
+ João Otávio Mochiuti
 
 [LinkedIn](https://www.linkedin.com/in/joao-otavio-mochiuti)
+
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat&logo=python&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=flat&logo=pandas&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/scikit_learn-Machine_Learning-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-Business_Intelligence-F2C811?style=flat&logo=powerbi&logoColor=black)
 ![DAX](https://img.shields.io/badge/DAX-Expressions-F2C811?style=flat&logo=powerbi&logoColor=black)
-![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow)
+![Status](https://img.shields.io/badge/Status-Concluído-success)
 
 ---
 
